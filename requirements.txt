@@ -1,0 +1,10 @@
+
+PyMuPDF
+pySmartDL
+ 
+faker
+htmlwebshot
+
+git+https://github.com/alexmercerind/youtube-search-python
+
+git+https://github.com/LEGEND-AI/Telethon
