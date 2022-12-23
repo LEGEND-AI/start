@@ -11,7 +11,6 @@ class Config(object):
     # MUST NEEDED VARS
     # set this value with your name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
-    AUTONAME = os.environ.get("AUTONAME", None)
     # Get the values for following 2 from my.telegram.org
     APP_ID = int(os.environ.get("APP_ID", 6))
     API_HASH = os.environ.get("API_HASH") or None
@@ -19,17 +18,10 @@ class Config(object):
     DB_URI = os.environ.get("DATABASE_URL", None)
     LEGEND_STRING = os.environ.get("LEGEND_STRING", None)
     # Telegram BOT Token and bot username from @BotFather
-    BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("BOT_TOKEN_BF_HER", None)
+    BOT_TOKEN = os.environ.get("BOT_TOKEN")
     BOT_USERNAME = None
     # get this value from http://www.timezoneconverter.com/cgi-bin/findzone.tzc
     TZ = os.environ.get("TZ", "Asia/Kolkata")
-    # set this with required legend repo link
-    UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/ITS-LEGENDBOT/LEGENDBOT"
-    )
-    EXTRA_REPO = os.environ.get("EXTRA_REPO", None)
-    if EXTRA_REPO and (EXTRA_REPO.lower() != "no") and not url(EXTRA_REPO):
-        EXTRA_REPO = "https://github.com/ITS-LEGENDBOT/PLUGINS"
     # Set this value with group id of private group(can be found this value by .id)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     # Set this value same as PRIVATE_GROUP_BOT_API_ID if you need pmgaurd
@@ -39,10 +31,6 @@ class Config(object):
     # set this value with channel id of private channel use full for .frwd cmd
     PRIVATE_CHANNEL_BOT_API_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_API_ID") or 0)
     # for heroku plugin you can get this value from https://dashboard.heroku.com/account
-    API_KEY = os.environ.get("API_KEY", None)
-    # set this with same app name you given for heroku
-    APP_NAME = os.environ.get("APP_NAME", None)
-    # Owner id to show profile link of given id as owner
     OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
     # set this with group id so it keeps notifying about your tagged messages or pms
     PM_LOGGER_GROUP_ID = int(
@@ -63,15 +51,6 @@ class Config(object):
     # specify NO_LOAD with plugin names for not loading in Legendbot
     NO_LOAD = list(os.environ.get("NO_LOAD", "").split())
     # for custom pic for .digitalpfp
-    DIGITAL_PIC = os.environ.get("DIGITAL_PIC", None)
-    # your default pic telegraph link
-    DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
-    # set this with your default bio
-    DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
-    # set this with your deafult name
-    DEFAULT_NAME = os.environ.get("DEFAULT_NAME", None)
-    # specify command handler that should be used for the plugins
-    # this should be a valid "regex" pattern
     HANDLER = os.environ.get("HANDLER", r".")
     SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r".")
     # set this with required folder path to act as download folder
@@ -153,16 +132,12 @@ class Config(object):
     SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID", None)
     SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET", None)
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-    # For updater plugin
-    UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "master")
+  
     # dont touch this at all
     SUDO_USERS: Set[int] = set()
     LEGENDUBLOGO = None
     BOTLOG = False
     BOTLOG_CHATID = 0
-    EXTRA_REPOBRANCH = os.environ.get("EXTRA_REPOBRANCH", "main")
-
-
 class Production(Config):
     LOGGER = False
 
