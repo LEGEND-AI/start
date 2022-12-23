@@ -17,8 +17,5 @@ class Development(Config):
     HANDLER = "."
     # command hanler for sudo
     SUDO_HANDLER = "."
-    # External plugins repo
-    EXTRA_REPO = "https://github.com/ITS-LEGENDBOT/PLUGINS"
-    UPSTREAM_REPO = "pro"
     # Your City's TimeZone
     TZ = "Asia/Kolkata"
